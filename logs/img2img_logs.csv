@@ -1,0 +1,90 @@
+prompt,outdir,init_img,skip_grid,skip_save,ddim_steps,ddim_eta,n_iter,H,W,strength,n_samples,n_rows,scale,from_file,seed,device,unet_bs,turbo,precision,format
+'the bot working correctly',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,279287,cuda,1,True,autocast,png
+'',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,113693,cuda,1,True,autocast,png
+'',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,876956,cuda,1,True,autocast,png
+'',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,296165,cuda,1,True,autocast,png
+'an angry husband with milk',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,334725,cuda,1,True,autocast,png
+'a living moai statue',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,248694,cuda,1,True,autocast,png
+'a living moai statue',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,361202,cuda,1,True,autocast,png
+'a cool guy in a leather jacket',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,770440,cuda,1,True,autocast,png
+'fat man in a suit',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,828448,cuda,1,True,autocast,png
+'a sleeping orange cat laying on his back',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,711020,cuda,1,True,autocast,png
+'pikachu's brother',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,284583,cuda,1,True,autocast,png
+'the face of a troll',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,53499,cuda,1,True,autocast,png
+'meme',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,423254,cuda,1,True,autocast,png
+'robotnik',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,424322,cuda,1,True,autocast,png
+'troll jerma985',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,488711,cuda,1,True,autocast,png
+'alton brown',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,469699,cuda,1,True,autocast,png
+'alton brown',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,359389,cuda,1,True,autocast,png
+'alton brown',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,13505,cuda,1,True,autocast,png
+'cheesy',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,104614,cuda,1,True,autocast,png
+'gordon ramsay',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,12669,cuda,1,True,autocast,png
+'gordon ramsay',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,49981,cuda,1,True,autocast,png
+'a head in a jar',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,476032,cuda,1,True,autocast,png
+'gordon ramsey',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,46637,cuda,1,True,autocast,png
+'england',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,516041,cuda,1,True,autocast,png
+'willem dafoe',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,562875,cuda,1,True,autocast,png
+'willem dafoe',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,446482,cuda,1,True,autocast,png
+'gordon ramsay',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,160286,cuda,1,True,autocast,png
+'ron perlman',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,607206,cuda,1,True,autocast,png
+'Obama',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,908223,cuda,1,True,autocast,png
+'the liver king',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,475307,cuda,1,True,autocast,png
+'it's not milk',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,840575,cuda,1,True,autocast,png
+'gordon ramsay',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,515667,cuda,1,True,autocast,png
+'alton brown',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,247754,cuda,1,True,autocast,png
+'willem dafoe',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,397063,cuda,1,True,autocast,png
+'todd howard',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,555594,cuda,1,True,autocast,png
+'gordon ramsay',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,842000,cuda,1,True,autocast,png
+'Swedish chef',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,708821,cuda,1,True,autocast,png
+'richard nixon',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,857815,cuda,1,True,autocast,png
+'walter white',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,929215,cuda,1,True,autocast,png
+'four minions',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,851475,cuda,1,True,autocast,png
+'super mario',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,683817,cuda,1,True,autocast,png
+'donald trump',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,320538,cuda,1,True,autocast,png
+'oscar the grouch',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,104660,cuda,1,True,autocast,png
+'trollface',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,47595,cuda,1,True,autocast,png
+'squidward',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,933351,cuda,1,True,autocast,png
+'squidward',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,445445,cuda,1,True,autocast,png
+"'The William Friends, children's tv show'",/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,652636,cuda,1,True,autocast,png
+'team fortress 2',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,423521,cuda,1,True,autocast,png
+'team fortress 2',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,325390,cuda,1,True,autocast,png
+'suffering',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,579218,cuda,1,True,autocast,png
+'Joe Rogan',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,69171,cuda,1,True,autocast,png
+'minions lunchables',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,23740,cuda,1,True,autocast,png
+'jerma',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,435894,cuda,1,True,autocast,png
+'prince william',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,145376,cuda,1,True,autocast,png
+'shaquille o'neal',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,370491,cuda,1,True,autocast,png
+'Samuel Jackson',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,539069,cuda,1,True,autocast,png
+'pingas',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,286213,cuda,1,True,autocast,png
+'Dr robotnik',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,927205,cuda,1,True,autocast,png
+'howie mandel',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,794371,cuda,1,True,autocast,png
+'howie mandel',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,63056,cuda,1,True,autocast,png
+'big inflated Jason',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,933771,cuda,1,True,autocast,png
+'the three musketeers',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,295099,cuda,1,True,autocast,png
+'world of warcraft',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,839533,cuda,1,True,autocast,png
+'pancakes',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,985289,cuda,1,True,autocast,png
+'mike from breaking bad',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,420819,cuda,1,True,autocast,png
+'jerma streaming',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,824860,cuda,1,True,autocast,png
+'jerma streaming on twitch.tv',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,820541,cuda,1,True,autocast,png
+'jerma pooping on stream',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,812579,cuda,1,True,autocast,png
+'gordon ramsay',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,980146,cuda,1,True,autocast,png
+'grey cat looking into the camera',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,440826,cuda,1,True,autocast,png
+'the sloppiest trolljob',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,850852,cuda,1,True,autocast,png
+'squidward winning employee of the month',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,853276,cuda,1,True,autocast,png
+'big yellow mushroom with an old man's face on the stem',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,148420,cuda,1,True,autocast,png
+'jerma',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,691929,cuda,1,True,autocast,png
+'meat clown',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,123841,cuda,1,True,autocast,png
+'jar jar binks',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,653049,cuda,1,True,autocast,png
+'mario',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,384662,cuda,1,True,autocast,png
+'luigi',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,402155,cuda,1,True,autocast,png
+'business rat',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,991515,cuda,1,True,autocast,png
+'gordon ramsay',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,295132,cuda,1,True,autocast,png
+'marvel kingpin',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,488156,cuda,1,True,autocast,png
+'alton brown',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,614332,cuda,1,True,autocast,png
+'felonious gru',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,143500,cuda,1,True,autocast,png
+'i've come for your pickle',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,9550,cuda,1,True,autocast,png
+'spilled milk',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,948281,cuda,1,True,autocast,png
+'william on the scooter drinking milk',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,790163,cuda,1,True,autocast,png
+"'the most vile, despicable, disgusting, slovenly, putrid, fetid, toilet ever'",/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,103895,cuda,1,True,autocast,png
+'the number 2278 in all its power and glory',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,685348,cuda,1,True,autocast,png
+'fallout terminal',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,944429,cuda,1,True,autocast,png

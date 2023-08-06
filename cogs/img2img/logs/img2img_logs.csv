@@ -1,0 +1,5 @@
+prompt,outdir,init_img,skip_grid,skip_save,ddim_steps,ddim_eta,n_iter,H,W,strength,n_samples,n_rows,scale,from_file,seed,device,unet_bs,turbo,precision,format
+'the bot working correctly',/project/ralabota/cogs/img2img/output,/home/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,656149,cuda,1,True,autocast,png
+'the bot working correctly',/project/ralabota/cogs/img2img/output,/home/ralabota/most-recent-attachment.png,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,518965,cuda,1,True,autocast,png
+'the bot working correctly',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,732352,cuda,1,True,autocast,png
+'the bot working correctly',/project/ralabota/cogs/img2img/output,/project/ralabota/most-recent-attachment,False,False,50,0.0,1,512,512,0.8,1,0,7.5,,826584,cuda,1,True,autocast,png

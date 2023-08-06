@@ -1,0 +1,8 @@
+prompt,outdir,skip_grid,skip_save,ddim_steps,fixed_code,ddim_eta,n_iter,H,W,C,f,n_samples,n_rows,scale,device,from_file,seed,unet_bs,turbo,precision,format
+'penish',/project/ralabota/cogs/diffusion/output,False,False,50,False,0.0,1,12,12,4,8,1,0,7.5,cuda,,68372,1,True,autocast,png
+'penish',/project/ralabota/cogs/diffusion/output,False,False,50,False,0.0,1,12,12,4,8,1,0,7.5,cuda,,938642,1,True,autocast,png
+'penish',/project/ralabota/cogs/diffusion/output,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,125686,1,True,autocast,png
+'penish',/project/ralabota/cogs/diffusion/output,False,False,50,False,0.0,1,256,256,4,8,1,0,7.5,cuda,,315986,1,True,autocast,png
+'penish',/project/ralabota/cogs/diffusion/output,False,False,50,False,0.0,1,256,256,4,8,1,0,7.5,cuda,,124094,1,True,autocast,png
+'penish',/project/ralabota/cogs/diffusion/output,False,False,50,False,0.0,1,256,256,4,8,1,0,7.5,cuda,,156657,1,True,autocast,png
+'penish',/project/ralabota/cogs/diffusion/output,False,False,50,False,0.0,1,256,256,4,8,1,0,7.5,cuda,,239452,1,True,autocast,png
