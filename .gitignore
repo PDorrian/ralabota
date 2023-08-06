@@ -1,0 +1,8 @@
+.discordbot.sh
+.key.txt
+.most-recent-attachment
+.pyvenv.cfg
+cogs/deep/checkpoints/*
+cogs/deep/driving_video/*
+cogs/deep/final.mp4
+cogs/deep/result.mp4
