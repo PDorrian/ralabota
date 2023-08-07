@@ -1,7 +1,11 @@
-.discordbot.sh
-.key.txt
-.most-recent-attachment
-.pyvenv.cfg
+*__pycache__
+key.txt
+git_key
+most-recent-attachment
+pyvenv.cfg
+
+discordbot.sh
+
 cogs/deep/checkpoints/*
 cogs/deep/driving_video/*
 cogs/deep/final.mp4
