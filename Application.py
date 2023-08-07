@@ -43,7 +43,7 @@ if __name__ == '__main__':
             async with aiohttp.ClientSession() as session:
                 async with session.get(attachment.url) as resp:
                     if resp.status == 200:
-                        f = await aiofiles.open('/project/ralabota/most-recent-attachment', mode='wb')
+                        f = await aiofiles.open('./most-recent-attachment', mode='wb')
                         await f.write(await resp.read())
                         await f.close()
 
