@@ -5,7 +5,7 @@ most-recent-attachment
 pyvenv.cfg
 
 discordbot.sh
-
+cogs/deep/video*
 cogs/deep/checkpoints/*
 cogs/deep/driving_video/*
 cogs/deep/final.mp4
