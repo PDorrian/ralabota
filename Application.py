@@ -3,13 +3,16 @@ from discord.ext import commands
 import aiohttp
 import aiofiles
 import asyncio
-
+import os
 from cogs.deep.Deep import Deep
 from cogs.diffusion.diffusion import Diffusion
 
 from cogs.img2img.diffimage import DiffIMG
 
 intents = discord.Intents.all()
+
+#had to do this to get CUDA working on WSL
+os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH://usr/lib/wsl/lib")
 
 if __name__ == '__main__':
     with open('key.txt') as k:

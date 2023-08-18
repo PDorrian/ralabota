@@ -4,23 +4,24 @@ import discord
 import os
 import yaml
 import inspect
+import shutil
 from skimage.transform import resize
 from skimage import img_as_ubyte
-from .demo import make_animation
-from .demo import load_checkpoints
-from .modules.util import from_script_dir
+#from .demo import make_animation
+#from .demo import load_checkpoints
+#from .modules.util import from_script_dir
 from PIL import Image
 import imageio
 import gc
-import torch
 import sys
 
-script_dir = './cogs/deep/'
+working_dir = os.getcwd()
 cwd = './'
+attachment="./cogs/deep/most-recent-attachment"
 
 
 class Deep(commands.Cog):
-    @from_script_dir
+    #@from_script_dir
     def __init__(self, bot):
         self.bot = bot
 
@@ -73,7 +74,7 @@ class Deep(commands.Cog):
         else:
             await message.channel.send("There are currently no references created.")
 
-    @from_script_dir
+    #@from_script_dir
     async def create_reference(self, message, new_command, youtube_link, timestamp1='00:00:00', timestamp2=''):
         # Check for valid YouTube link
         if 'youtube.com' not in youtube_link and 'youtu.be' not in youtube_link:
@@ -160,7 +161,7 @@ class Deep(commands.Cog):
                 os.remove("video/raw.mp4")
                 os.remove("video/cut.mp4")
 
-    @from_script_dir
+    #@from_script_dir
     async def delete_reference(self, message, reference):
         # Check if reference exists
         if reference in self.my_list:
@@ -179,36 +180,40 @@ class Deep(commands.Cog):
                 os.remove('driving_video/' + reference + '.mp4')
                 os.remove('driving_video/' + reference + '_sound.mp3')
             except OSError as e:
-                print("Failed with:", e.strerror)
+                    print("Failed with:", e.strerror)
 
             await message.channel.send("Reference deleted, ``" + reference + "``.")
 
-        else:
-            await message.channel.send("No reference found with name ``" + reference + "``.")
+            #else:
+                #await message.channel.send("No reference found with name ``" + reference + "``.")
 
     @staticmethod
     async def help(message):
         e = {
-            "title": "DeepBot Help",
-            "description": "**See list of available reference videos**\n```.deep list```\n**Create a deepfake video**\nPost an image and then use the following command: \n```.deep <name of reference>```\n**Create a new reference video**\nCreate a new reference from a YouTube video, and crop it using optional timestamp parameters.\n```.deep create <name> <YouTube URL> [timestamp1] [timestamp2]``` \n**Delete an existing reference video**. \n```.deep delete <reference name>```\n",
-            "color": 14071166,
-            "author": "Quibble"
-        }
+                "title": "DeepBot Help",
+                "description": "**See list of available reference videos**\n```.deep list```\n**Create a deepfake video**\nPost an image and then use the following command: \n```.deep <name of reference>```\n**Create a new reference video**\nCreate a new reference from a YouTube video, and crop it using optional timestamp parameters.\n```.deep create <name> <YouTube URL> [timestamp1] [timestamp2]``` \n**Delete an existing reference video**. \n```.deep delete <reference name>```\n",
+                "color": 14071166,
+                "author": "Quibble"
+            }
         embed = discord.Embed(title=e["title"], description=e["description"], color=e["color"])
         await message.channel.send(embed=embed)
 
     @staticmethod
     async def deep_create(message, cmd):
         await message.channel.send("Processing...")
+
+        if os.path.isfile(attachment):
+            os.remove(attachment)
+
+        print(os.getcwd())
+        shutil.copy("most-recent-attachment","./cogs/deep/most-recent-attachment")
         print(os.getcwd())
         print("Beginning video")
-        os.system(
-            "python cogs/deep/demo.py --config cogs/deep/config/vox-adv-256.yaml --driving_video cogs/deep/driving_video/" + cmd + ".mp4 --source_image most-recent-attachment --result_video cogs/deep/result.mp4 --checkpoint cogs/deep/checkpoints/vox-adv-cpk.pth.tar --relative --adapt_scale")
+        os.system("conda run -n deepfake python ./cogs/deep/demo.py --config ./cogs/deep/config/vox-adv-256.yaml --driving_video ./cogs/deep/video/crop.mp4 --source_image most-recent-attachment --result_video ./cogs/deep/video/result.mp4 --checkpoint ./cogs/deep/checkpoints/vox-adv-cpk.pth.tar --relative --adapt_scale")
         print("Video done")
-        os.system(
-            "ffmpeg -i cogs/deep/result.mp4 -i cogs/deep/driving_video/" + cmd + "_sound.mp3 -vcodec copy -acodec copy cogs/deep/final.mp4 -y")
+        os.system("ffmpeg -i ./cogs/deep/video/result.mp4 -i ./cogs/deep/video/crop_sound.mp3 -vcodec copy -acodec copy ./cogs/deep/video/final.mp4 -y")
         print("Audio added")
-        await message.channel.send(file=discord.File('cogs/deep/final.mp4'))
+        await message.channel.send(file=discord.File('./cogs/deep/video/final.mp4'))
 
     @staticmethod
     async def deep_create_2(message, cmd):
@@ -230,9 +235,10 @@ class Deep(commands.Cog):
         reader.close()
         print("image stuff done")
         source_image = resize(source_image, (256, 256))[..., :3]
+        
         driving_video = [resize(frame, (256, 256))[..., :3] for frame in driving_video]
-        generator, kp_detector = load_checkpoints(config_path='./cogs/deep/config/vox-adv-256.yaml', checkpoint_path='./cogs/deep/checkpoints/vox-adv-cpk.pth.tar')
-        predictions = make_animation(source_image, driving_video, generator, kp_detector, relative=False, adapt_movement_scale=False)
+        #generator, kp_detector = load_checkpoints(config_path='./cogs/deep/config/vox-adv-256.yaml', checkpoint_path='./cogs/deep/checkpoints/vox-adv-cpk.pth.tar')
+        #predictions = make_animation(source_image, driving_video, generator, kp_detector, relative=False, adapt_movement_scale=False)
 
         imageio.mimsave('result.mp4', [img_as_ubyte(frame) for frame in predictions], fps=fps)
 

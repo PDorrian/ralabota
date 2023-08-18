@@ -18,6 +18,9 @@ from modules.keypoint_detector import KPDetector
 from animate import normalize_kp
 from scipy.spatial import ConvexHull
 
+os.system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH://usr/lib/wsl/lib")
+
+
 if sys.version_info[0] < 3:
     raise Exception("You must use Python 3 or higher. Recommended version is Python 3.7")
 
