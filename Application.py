@@ -3,7 +3,7 @@ from discord.ext import commands
 import aiohttp
 import aiofiles
 import asyncio
-
+import os
 from cogs.deep.Deep import Deep
 from cogs.diffusion.diffusion import Diffusion
 
