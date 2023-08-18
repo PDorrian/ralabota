@@ -79,7 +79,7 @@ class Deep(commands.Cog):
         # Check for valid YouTube link
         if 'youtube.com' not in youtube_link and 'youtu.be' not in youtube_link:
             await message.channel.send("ERROR: Video reference must be a YouTube URL.")
-            await message.channel.send(".deep addreference <.name> <YouTube URL> [Start Timestamp] [End Timestamp]")
+            await message.channel.send(".deep create <.name> <YouTube URL> [Start Timestamp] [End Timestamp]")
 
         # Check if command already exists
         elif new_command in self.my_list:
@@ -101,65 +101,26 @@ class Deep(commands.Cog):
             if valid_input:
                 await message.channel.send("Creating new reference...")
                 # Download video
-                os.system('youtube-dl -f worst --output "video/raw.mp4" --recode-video mp4 ' + youtube_link)
+                viddownload = "./cogs/deep/video/newfake.mp4"
+                if os.path.isfile(viddownload):
+                    os.remove(viddownload)
+                os.system('yt-dlp --output "./cogs/deep/video/newfake.mp4" --recode-video mp4 ' + youtube_link)
                 # Cut to length
                 if timestamp2 == '':
-                    os.system('ffmpeg -ss ' + timestamp1 + ' -i video/raw.mp4 video/cut.mp4 -y')
+                    os.system('ffmpeg -ss ' + timestamp1 + ' -i ./cogs/deep/video/newfake.mp4 ./cogs/deep/video/newfake-cut.mp4 -y')
                 else:
-                    os.system('ffmpeg -ss ' + timestamp1 + ' -to ' + timestamp2 + ' -i video/raw.mp4 video/cut.mp4 -y')
+                    os.system('ffmpeg -ss ' + timestamp1 + ' -to ' + timestamp2 + ' -i ./cogs/deep/video/newfake.mp4 ./cogs/deep/video/newfake-cut.mp4 -y')
 
                 # Crop for best face alignment
                 # Suggest potential crops
-                out = os.popen('python crop-video.py --inp video/cut.mp4')
-                crops = out.read().split('\n')
-                out.close()
-                crops[:] = [x for x in crops if x]
-                print(crops)
-
-                # Analyse suggestions
-                if crops:
-                    hi = 0
-                    indx = 0
-                    for i in range(len(crops)):
-                        crop = crops[i].split()
-                        if crop:
-                            # Choose best fit
-                            if float(crop[6]) > hi:
-                                hi = float(crop[6])
-                                indx = i
-                                print(hi, indx)
-
-                    # Crop video
-                    new_crop = crops[indx].split()[8][6:-1]
-                    print('New crop: ' + new_crop)
-                    os.system('ffmpeg -i video/cut.mp4 -filter:v "crop=' + new_crop + ', scale=256:256" crop.mp4 -y')
-
-                    # Save new reference
-                    os.system('ffmpeg -i crop.mp4 -q:a 0 -map a ./cogs/deep/driving_video/' + new_command + '_sound.mp3')
-                    os.system('ffmpeg -i crop.mp4 -c copy ./cogs/deep/driving_video/' + new_command + '.mp4 -y')
-
-                    # Save new reference
-                    rel_path = "list.yaml"
-                    abs_yaml_path = os.path.join(script_dir, rel_path)
-                    with open('list.yaml', 'r') as file:
-                        up_list = list(yaml.load(file, Loader=yaml.FullLoader))
-                        up_list.append(new_command)
-                        self.my_list.append(new_command)
-                        print(up_list)
-                    with open(abs_yaml_path, 'w') as file:
-                        yaml.dump(up_list, file)
-
-                    print('New Reference Created')
-                    await message.channel.send("New reference created, " + new_command)
-
-                # No suitable crops found
-                else:
-                    await message.channel.send('No faces recognised in clip. The clip may be too short or contain too many cuts.')
-
-                # Clean up unnecessary resources
-                os.remove("crop.mp4")
-                os.remove("video/raw.mp4")
-                os.remove("video/cut.mp4")
+                try:
+                    os.system('conda run -n deepfake python ./cogs/deep/crop-video.py --inp ./video/newfake-cut.mp4')
+                    os.system('ffmpeg -i ./cogs/deep/video/newfake-cropped.mp4 -q:a 0 -map a ./cogs/deep/video/' + new_command + '_sound.mp3')
+                    os.system('mv ./cogs/deep/video/newfake-cropped.mp4 ./cogs/deep/video/' + new_command +'.mp4')
+                    await message.channel.send("New reference created: " + new_command)
+                except:
+                    await message.channel.send('No faces recognized. Clip may be too short of have too many cuts')
+                
 
     #@from_script_dir
     async def delete_reference(self, message, reference):
@@ -209,9 +170,9 @@ class Deep(commands.Cog):
         shutil.copy("most-recent-attachment","./cogs/deep/most-recent-attachment")
         print(os.getcwd())
         print("Beginning video")
-        os.system("conda run -n deepfake python ./cogs/deep/demo.py --config ./cogs/deep/config/vox-adv-256.yaml --driving_video ./cogs/deep/video/crop.mp4 --source_image most-recent-attachment --result_video ./cogs/deep/video/result.mp4 --checkpoint ./cogs/deep/checkpoints/vox-adv-cpk.pth.tar --relative --adapt_scale")
+        os.system("conda run -n deepfake python ./cogs/deep/demo.py --config ./cogs/deep/config/vox-adv-256.yaml --driving_video ./cogs/deep/video/" +cmd + ".mp4 --source_image most-recent-attachment --result_video ./cogs/deep/video/result.mp4 --checkpoint ./cogs/deep/checkpoints/vox-adv-cpk.pth.tar --relative --adapt_scale")
         print("Video done")
-        os.system("ffmpeg -i ./cogs/deep/video/result.mp4 -i ./cogs/deep/video/crop_sound.mp3 -vcodec copy -acodec copy ./cogs/deep/video/final.mp4 -y")
+        os.system("ffmpeg -i ./cogs/deep/video/result.mp4 -i ./cogs/deep/video/" + cmd + "_sound.mp3 -vcodec copy -acodec copy ./cogs/deep/video/final.mp4 -y")
         print("Audio added")
         await message.channel.send(file=discord.File('./cogs/deep/video/final.mp4'))
 

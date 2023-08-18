@@ -69,7 +69,7 @@ def compute_bbox(start, end, fps, tube_bbox, frame_shape, inp, image_shape, incr
 
     scale = f'{image_shape[0]}:{image_shape[1]}'
 
-    return f'ffmpeg -i {inp} -ss {start} -t {time} -filter:v "crop={w}:{h}:{left}:{top}, scale={scale}" "./video/crop.mp4'
+    return f'ffmpeg -i {inp} -ss {start} -t {time} -filter:v "crop={w}:{h}:{left}:{top}, scale=256:256" "./video/newfake-cropped.mp4'
 
 
 def compute_bbox_trajectories(trajectories, fps, frame_shape, args):
@@ -154,5 +154,4 @@ if __name__ == "__main__":
     commands = process_video(args)
     for command in commands:
         print (command)
-
-        
+        os.system(command+'"') 
