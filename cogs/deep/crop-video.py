@@ -69,7 +69,7 @@ def compute_bbox(start, end, fps, tube_bbox, frame_shape, inp, image_shape, incr
 
     scale = f'{image_shape[0]}:{image_shape[1]}'
 
-    return f'ffmpeg -i {inp} -ss {start} -t {time} -filter:v "crop={w}:{h}:{left}:{top}, scale={scale}" crop.mp4'
+    return f'ffmpeg -i {inp} -ss {start} -t {time} -filter:v "crop={w}:{h}:{left}:{top}, scale={scale}" "./video/crop.mp4'
 
 
 def compute_bbox_trajectories(trajectories, fps, frame_shape, args):
@@ -83,7 +83,7 @@ def compute_bbox_trajectories(trajectories, fps, frame_shape, args):
 
 def process_video(args):
     device = 'cpu' if args.cpu else 'cuda'
-    fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, flip_input=False, device=device)
+    fa = face_alignment.FaceAlignment(face_alignment.LandmarksType.TWO_D, flip_input=False, device=device)
     video = imageio.get_reader(args.inp)
 
     trajectories = []
