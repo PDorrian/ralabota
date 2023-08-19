@@ -1,3 +1,6 @@
 [submodule "stable-diffusion"]
 	path = ./cogs/diffusion/stable-diffusion
 	url = git@github.com:basujindal/stable-diffusion.git
+[submodule "cogs/diffusion/stable-diffusion"]
+	path = cogs/diffusion/stable-diffusion
+	url = git@github.com:basujindal/stable-diffusion.git
