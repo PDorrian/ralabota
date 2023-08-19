@@ -4,6 +4,7 @@ import os
 import discord
 
 cogdir="./cogs/diffusion"
+cwd = os.getcwd()
 
 class Diffusion(commands.Cog):
     def __init__(self,bot):
@@ -39,7 +40,9 @@ class Diffusion(commands.Cog):
             os.rmdir(cogdir+"/output/"+folder)
         
         await ctx.send(file=discord.File("./cogs/diffusion/output.png"))
-        os.rename((cogdir+"/output.png"),(cogdir+"/diffusion-archive/"+todiffuse+".png"))
+        print(os.getcwd())
+        todiffuse = todiffuse.replace(" ","")
+        os.rename(cogdir+"/output.png",cogdir+"/diffusion-archive/"+todiffuse+".png")
         #Remove the image for cleanup
 
         

@@ -1284,3 +1284,10 @@ a poop sandwich,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,
 turkey and ham sandwich,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,372517,1,True,autocast,png,plms,./cogs/diffusion/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
 dangerous robot with huge laser,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,266832,1,True,autocast,png,plms,./cogs/diffusion/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
 evil cat,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,869764,1,True,autocast,png,plms,./cogs/diffusion/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
+silly face,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,781573,1,True,autocast,png,plms,models/ldm/stable-diffusion-v1/model.ckpt
+big shit,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,434023,1,True,autocast,png,plms,models/ldm/stable-diffusion-v1/model.ckpt
+little shit,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,13979,1,True,autocast,png,plms,./cogs/diffusion/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
+big frowning face,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,275506,1,True,autocast,png,plms,./cogs/diffusion/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
+small poop,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,790898,1,True,autocast,png,plms,./cogs/diffusion/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
+big poop,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,804643,1,True,autocast,png,plms,./cogs/diffusion/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
+a crying human next to a dead robot,./cogs/diffusion/output/,False,False,50,False,0.0,1,512,512,4,8,1,0,7.5,cuda,,486019,1,True,autocast,png,plms,./cogs/diffusion/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt
