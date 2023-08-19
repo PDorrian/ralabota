@@ -18,22 +18,31 @@ import sys
 working_dir = os.getcwd()
 cwd = './'
 attachment="./cogs/deep/most-recent-attachment"
+sourcefakes = "./cogs/deep/video/"
+workingfiles = ["newfake-cut.mp4","newfake.mp4","result.mp4","final.mp4","cut.mp4"]
+options = []
 
 
 class Deep(commands.Cog):
     #@from_script_dir
     def __init__(self, bot):
         self.bot = bot
+        
+        for file in os.listdir(sourcefakes):
+            if file.endswith(".mp4") and (file not in workingfiles):
+                file = file.replace(".mp4","")
+                options.append(file)
+        print(options)
 
         # Create list if it does not already exist
-        with open('list.yaml', 'a+') as file:
-            file.close()
+        #with open('list.yaml', 'a+') as file:
+         #   file.close()
 
         # Parse list
-        with open('list.yaml', 'r') as file:
-            self.my_list = yaml.load(file, Loader=yaml.FullLoader) or []
-            if self.my_list != []:
-                print('\n'.join(self.my_list))
+        #with open('list.yaml', 'r') as file:
+        #   self.my_list = yaml.load(file, Loader=yaml.FullLoader) or []
+        #   if self.my_list != []:
+        #       print('\n'.join(self.my_list))
 
 
     
@@ -42,7 +51,7 @@ class Deep(commands.Cog):
         cmd = args[0]
 
         if cmd == 'list':
-            await self.show_list(message)
+            await message.channel.send(options)
  
 
         elif cmd == 'create':
@@ -61,7 +70,7 @@ class Deep(commands.Cog):
         elif cmd == 'help':
             await self.help(message)
 
-        elif cmd in self.my_list:
+        elif cmd in options:
 
             await self.deep_create(message, cmd)
 
@@ -82,7 +91,7 @@ class Deep(commands.Cog):
             await message.channel.send(".deep create <.name> <YouTube URL> [Start Timestamp] [End Timestamp]")
 
         # Check if command already exists
-        elif new_command in self.my_list:
+        elif new_command in options:
             await message.channel.send("ERROR: Command with that name already exists. Try using another name.")
 
         else:
@@ -100,6 +109,7 @@ class Deep(commands.Cog):
 
             if valid_input:
                 await message.channel.send("Creating new reference...")
+                await message.channel.send("This may take a while depending on input size, bot may become unresponsive!")
                 # Download video
                 viddownload = "./cogs/deep/video/newfake.mp4"
                 if os.path.isfile(viddownload):
@@ -114,10 +124,12 @@ class Deep(commands.Cog):
                 # Crop for best face alignment
                 # Suggest potential crops
                 try:
-                    os.system('conda run -n deepfake python ./cogs/deep/crop-video.py --inp ./video/newfake-cut.mp4')
+                    os.system('export LD_LIBRARY_PATH=$LD_LIBRARY_PATH://usr/lib/wsl/lib')
+                    os.system('conda run -n deepfake python ./cogs/deep/crop-video.py --inp ./cogs/deep/video/newfake-cut.mp4')
                     os.system('ffmpeg -i ./cogs/deep/video/newfake-cropped.mp4 -q:a 0 -map a ./cogs/deep/video/' + new_command + '_sound.mp3')
                     os.system('mv ./cogs/deep/video/newfake-cropped.mp4 ./cogs/deep/video/' + new_command +'.mp4')
                     await message.channel.send("New reference created: " + new_command)
+                    options.append(new_command)
                 except:
                     await message.channel.send('No faces recognized. Clip may be too short of have too many cuts')
                 
@@ -125,28 +137,14 @@ class Deep(commands.Cog):
     #@from_script_dir
     async def delete_reference(self, message, reference):
         # Check if reference exists
-        if reference in self.my_list:
-            # Update list
-            with open('list.yaml', 'r') as file:
-                up_list = yaml.load(file, Loader=yaml.FullLoader)
-                up_list.remove(reference)
-                self.my_list.remove(reference)
-                print(up_list)
-
-            with open('list.yaml', 'w') as file:
-                yaml.dump(up_list, file)
-
-            # Delete files
-            try:
-                os.remove('driving_video/' + reference + '.mp4')
-                os.remove('driving_video/' + reference + '_sound.mp3')
-            except OSError as e:
-                    print("Failed with:", e.strerror)
-
+        if reference in options:
+            os.remove('./cogs/deep/video/' + reference + '.mp4')
+            os.remove('./cogs/deep/video/' + reference + '_sound.mp3')
+            options.remove(reference)
             await message.channel.send("Reference deleted, ``" + reference + "``.")
 
-            #else:
-                #await message.channel.send("No reference found with name ``" + reference + "``.")
+        else:
+            await message.channel.send("No reference found with name ``" + reference + "``.")
 
     @staticmethod
     async def help(message):
