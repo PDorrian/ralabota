@@ -10,6 +10,7 @@ from cogs.diffusion.diffusion import Diffusion
 from cogs.img2img.diffimage import DiffIMG
 
 intents = discord.Intents.all()
+os.environ['LD_LIBRARY_PATH'] = "/usr/lib/wsl/lib"
 
 if __name__ == '__main__':
     with open('key.txt') as k:

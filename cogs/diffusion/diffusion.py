@@ -3,6 +3,9 @@ import subprocess
 import os
 import discord
 
+cogdir="./cogs/diffusion"
+cwd = os.getcwd()
+
 class Diffusion(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
@@ -17,30 +20,30 @@ class Diffusion(commands.Cog):
         await ctx.send("processing prompt")
 
         #This joins all arguments together into the full message
-        message = separator.join(messages)
+        todiffuse = separator.join(messages)
         
         #Re-define the message variable to have quotes around it
-        message = '"' + message + '"' 
+        #todiffuse = '"' + message + '"' 
 
         #Debug, nice for logging what is being sent
-        print (message + ' is being sent for processing')
-        
-        #This is horrid, but it was the easiest way I could find to pass the message into the bash script
-        #that runs the diffusion
-        #We open args.sh, and then insert the contents of the discord message into it, where it can be read
-        #from discord-text-diffuse.sh and run the prompt
-        write_args = open("/project/ralabota/cogs/diffusion/args.sh", "w")
-        write_args.write("REQUEST=" + message)
-        write_args.close()
+        print (todiffuse + ' is being sent for processing')
 
         #This runs the command using subprocess
-        subprocess.run("/project/ralabota/cogs/diffusion/discord-text-diffuse.sh")
-        
+        print(os.getcwd())
+        subprocess.call(["conda","run","-n","diffusion","python","./cogs/diffusion/stable-diffusion/optimizedSD/optimized_txt2img.py","--turbo","--prompt",todiffuse,"--H","512","--W","512","--n_iter","1","--n_samples","1","--ddim_steps","50","--outdir","./cogs/diffusion/output/"])
         #Sends the complete image back into the discord
-        await ctx.send(file=discord.File("/project/ralabota/cogs/diffusion/output/output.png"))
+        for folder in os.listdir(cogdir+"/output/"):
+            print(folder)
+            for file in os.listdir(cogdir+"/output/"+folder+"/"):
+                print(file)
+                os.rename((cogdir+"/output/"+folder+"/"+file),(cogdir+"/output.png"))
+            os.rmdir(cogdir+"/output/"+folder)
         
+        await ctx.send(file=discord.File("./cogs/diffusion/output.png"))
+        print(os.getcwd())
+        todiffuse = todiffuse.replace(" ","")
+        os.rename(cogdir+"/output.png",cogdir+"/diffusion-archive/"+todiffuse+".png")
         #Remove the image for cleanup
-        os.remove("/project/ralabota/cogs/diffusion/output/output.png")
 
         
 

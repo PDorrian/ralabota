@@ -11,6 +11,10 @@ import numpy as np
 import warnings
 warnings.filterwarnings("ignore")
 
+
+#os.system('export LD_LIBRARY_PATH=$LD_LIBRARY_PATH://usr/lib/wsl/lib')
+
+
 def extract_bbox(frame, fa):
     if max(frame.shape[0], frame.shape[1]) > 640:
         scale_factor =  max(frame.shape[0], frame.shape[1]) / 640.0
@@ -69,7 +73,7 @@ def compute_bbox(start, end, fps, tube_bbox, frame_shape, inp, image_shape, incr
 
     scale = f'{image_shape[0]}:{image_shape[1]}'
 
-    return f'ffmpeg -i {inp} -ss {start} -t {time} -filter:v "crop={w}:{h}:{left}:{top}, scale=256:256" "./video/newfake-cropped.mp4'
+    return f'ffmpeg -i {inp} -ss {start} -t {time} -filter:v "crop={w}:{h}:{left}:{top}, scale=256:256" "./cogs/deep/video/newfake-cropped.mp4'
 
 
 def compute_bbox_trajectories(trajectories, fps, frame_shape, args):
